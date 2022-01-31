@@ -467,7 +467,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getLayer(string $identifier, integer $layerId)
+    public function getLayer(string $identifier, int $layerId)
     {
         $response = $this->request('GET', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId);
 
@@ -484,7 +484,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function updateLayer(string $identifier, integer $layerId, array $options)
+    public function updateLayer(string $identifier, int $layerId, array $options)
     {
         $response = $this->request('PATCH', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId, [
             'json' => $options,
@@ -502,7 +502,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function deleteLayer(string $identifier, integer $layerId)
+    public function deleteLayer(string $identifier, int $layerId)
     {
         $response = $this->request('DELETE', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/delete');
 
@@ -519,7 +519,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getFeatureDataVectorLayer(string $identifier, integer $layerId, array $options)
+    public function getFeatureDataVectorLayer(string $identifier, int $layerId, array $options)
     {
         $response = $this->request('GET', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/features', [
             'query' => $options,
@@ -538,7 +538,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function uploadSldVectorLayer(string $identifier, integer $layerId, array $options)
+    public function uploadSldVectorLayer(string $identifier, int $layerId, array $options)
     {
         $response = $this->request('POST', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/sld/upload', [
             'json' => $options,
@@ -556,7 +556,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function deleteSldVectorLayer(string $identifier, integer $layerId)
+    public function deleteSldVectorLayer(string $identifier, int $layerId)
     {
         $response = $this->request('DELETE', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/sld/delete');
 
@@ -572,7 +572,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function hasSldVectorLayer(string $identifier, integer $layerId)
+    public function hasSldVectorLayer(string $identifier, int $layerId)
     {
         $response = $this->request('GET', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/sld');
 
@@ -588,7 +588,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getLegendVectorLayer(string $identifier, integer $layerId)
+    public function getLegendVectorLayer(string $identifier, int $layerId)
     {
         $response = $this->request('GET', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/legenda');
 
@@ -623,7 +623,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getPropertiesVectorLayer(string $identifier, integer $layerId)
+    public function getPropertiesVectorLayer(string $identifier, int $layerId)
     {
         $response = $this->request('POST', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/get_properties');
 
@@ -640,7 +640,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function deletePropertyVectorLayer(string $identifier, integer $layerId, $featureId)
+    public function deletePropertyVectorLayer(string $identifier, int $layerId, $featureId)
     {
         $response = $this->request('DELETE', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/delete_properties/' . $featureId);
 
@@ -657,7 +657,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function updatePropertyVectorLayer(string $identifier, integer $layerId)
+    public function updatePropertyVectorLayer(string $identifier, int $layerId)
     {
         $response = $this->request('POST', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/update_feature');
 
@@ -677,7 +677,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function listFieldMapping(string $identifier, integer $layerId)
+    public function listFieldMapping(string $identifier, int $layerId)
     {
 
         $this->api->isLayerId($layerId);
@@ -698,7 +698,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function sortFieldMapping(string $identifier, integer $layerId, array $options)
+    public function sortFieldMapping(string $identifier, int $layerId, array $options)
     {
         $response = $this->request('POST', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/sort_mappings', [
             'json' => $options,
@@ -717,7 +717,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function createFieldMapping(string $identifier, integer $layerId, array $options)
+    public function createFieldMapping(string $identifier, int $layerId, array $options)
     {
         $response = $this->request('POST', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/mappings', [
             'json' => $options,
@@ -736,7 +736,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getFieldMapping(string $identifier, integer $layerId, $mappingId)
+    public function getFieldMapping(string $identifier, int $layerId, $mappingId)
     {
         $response = $this->request('GET', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/mappings/' . $mappingId);
 
@@ -754,7 +754,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function updateFieldMapping(string $identifier, integer $layerId, $mappingId, array $options)
+    public function updateFieldMapping(string $identifier, int $layerId, $mappingId, array $options)
     {
         $response = $this->request('PATCH', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/mappings/' . $mappingId, [
             'json' => $options,
@@ -773,7 +773,7 @@ class MapsApi extends Client
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function deleteFieldMapping(string $identifier, integer $layerId, $mappingId)
+    public function deleteFieldMapping(string $identifier, int $layerId, $mappingId)
     {
         $response = $this->request('DELETE', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId . '/mappings/' . $mappingId . '/delete');
 
@@ -783,14 +783,14 @@ class MapsApi extends Client
 
     /**
      * @param string  $identifier
-     * @param integer $layerId
+     * @param int $layerId
      * @param array  $options
      * 
      * @return mixed
      * 
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function setFilter(string $identifier, integer $layerId, array $options)
+    public function setFilter(string $identifier, int $layerId, array $options)
     {
         $response = $this->request('BATCH', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId, [
             'json' => $options
@@ -802,14 +802,14 @@ class MapsApi extends Client
 
     /**
      * @param string  $identifier
-     * @param integer $layerId
+     * @param int $layerId
      * @param array  $options
      * 
      * @return mixed
      * 
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function setTranslation(string $identifier, integer $layerId, array $options)
+    public function setTranslation(string $identifier, int $layerId, array $options)
     {
         $response = $this->request('BATCH', '/maps_api/v2/server/viewers/' . $identifier . '/layers/' . $layerId, [
             'json' => $options
